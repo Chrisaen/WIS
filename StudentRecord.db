@@ -1,0 +1,38 @@
+-- Create Student table
+CREATE TABLE Student (
+    StudentID INTEGER PRIMARY KEY,
+    FirstName TEXT,
+    LastName TEXT,
+    DateOfBirth DATE,
+    Email TEXT,
+    Phone TEXT
+    -- Add other attributes as needed
+);
+
+-- Create Course table
+CREATE TABLE Course (
+    CourseID INTEGER PRIMARY KEY,
+    CourseName TEXT,
+    Credits INTEGER
+    -- Add other attributes as needed
+);
+
+-- Create Instructor table
+CREATE TABLE Instructor (
+    InstructorID INTEGER PRIMARY KEY,
+    FirstName TEXT,
+    LastName TEXT,
+    Email TEXT,
+    Phone TEXT
+    -- Add other attributes as needed
+);
+
+-- Create Enrollment table
+CREATE TABLE Enrollment (
+    EnrollmentID INTEGER PRIMARY KEY,
+    StudentID INTEGER REFERENCES Student(StudentID),
+    CourseID INTEGER REFERENCES Course(CourseID),
+    EnrollmentDate DATE,
+    Grade TEXT
+    -- Add other attributes as needed
+);
